@@ -10,23 +10,30 @@ import LearningRoute from '../../routes/LearningRoute/LearningRoute'
 import NotFoundRoute from '../../routes/NotFoundRoute/NotFoundRoute'
 import SRContext from '../../contexts/SRContext';
 import LanguageApiService from '../../services/language-api-service';
+import UserContext from '../../contexts/UserContext';
 import './App.css'
 
 export default class App extends Component {
+  static contextType = UserContext
   state = {
     hasError: false,
     loadLangWords:()=>{
-      LanguageApiService.getLanguage()
+      return LanguageApiService.getLanguage()
         .then(langWords=>{
+          if(langWords==='unauthorized'){
+            return this.context.processLogout();
+          }
+
           this.setState({
             language:langWords.language,
             words: langWords.words
           })
+          return 'success';
         })
     },
     updateLangWords: () => { },
     submitAnswer: () => { },
-    language: '',
+    language: {},
     words: []
   }
 

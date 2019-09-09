@@ -7,7 +7,13 @@ class DashboardRoute extends Component {
   static contextType = SRContext
 
   componentDidMount(){
-    this.context.loadLangWords();
+    this.context.loadLangWords()
+      .then(res=>{
+        if(res!=='success'){
+          console.log('hi');
+          this.props.history.push('/login')
+        }
+      })
   }
 
   render() {
