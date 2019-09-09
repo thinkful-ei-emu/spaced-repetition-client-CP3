@@ -1,16 +1,16 @@
-.SignupForm{
+.LoginForm{
   text-align:left;
   padding:0px 10px;
 }
 
-.SignupForm input{
+.LoginForm input{
   width:100%;
   padding:5px;
   border:0;
   border-radius:3px;
 }
 
-.SignupButton{
+.LoginButton{
   padding:5px;
   width:100%;
   border:0;
@@ -18,8 +18,9 @@
   background-color:rgb(0, 201, 251);
 }
 
-.SignupBox{
-  height:400px;
+
+.LoginBox{
+  height:250px;
   width:300px;
   position:relative;
   margin:7vh auto;
@@ -29,8 +30,4 @@
   border-radius:2%;
 }
 
-.SignupLineBreakDiv{
-  width:100%;
-  height:1em;
-}
 

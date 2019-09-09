@@ -40,7 +40,7 @@ class Header extends Component {
 
   render() {
     return (
-      <header>
+      <header className='header-nav'>
         <h1>
           <Link to='/'>
             Spaced repetition
