@@ -19,7 +19,6 @@
 }
 
 .SignupBox{
-  height:400px;
   width:300px;
   position:relative;
   margin:7vh auto;
@@ -28,6 +27,7 @@
   background-color:#AEA764;
   text-align:center;
   border-radius:2%;
+  padding-bottom:28px;
 }
 
 .SignupLineBreakDiv{

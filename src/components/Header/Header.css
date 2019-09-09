@@ -16,7 +16,7 @@
 
 .header-nav a:after {    
   background: none repeat scroll 0 0 transparent;
-  bottom: -2px;
+  bottom: -3px;
   content: "";
   display: block;
   height: 2px;
@@ -32,4 +32,5 @@
 }
 .header-right{
   font-weight:600;
+
 }
