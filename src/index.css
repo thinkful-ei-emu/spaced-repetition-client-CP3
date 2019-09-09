@@ -33,3 +33,14 @@ body{
 :root {
   --font-size: calc(10px + 1vmin);
 }
+
+#root{
+  height:auto;
+  min-height:100vh !important;
+}
+
+.App{
+  height:auto;
+  min-height:100vh !important;
+}
+
