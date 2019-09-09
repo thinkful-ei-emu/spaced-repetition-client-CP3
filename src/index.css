@@ -5,6 +5,7 @@
 }
 
 html,body {
+  min-width:304px;
   position:relative;
   height:auto;
   min-height:100vh !important;
@@ -27,7 +28,6 @@ body{
   -moz-background-size: cover;
   -webkit-background-size: cover;
   background-size: cover;
-  min-width:304px;
 }
 
 :root {
