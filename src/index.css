@@ -13,7 +13,7 @@ html,body {
   font-family: "Ubuntu", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-width:304px;
+  
 }
 body{
   background-image: linear-gradient(
@@ -27,6 +27,7 @@ body{
   -moz-background-size: cover;
   -webkit-background-size: cover;
   background-size: cover;
+  min-width:304px;
 }
 
 :root {

@@ -2,7 +2,8 @@
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background-color:lightgray;
+  background-color:#AEA764;
+  background-color:#D0AA3A;
 }
 
 .header-nav a{
@@ -10,12 +11,12 @@
   display:inline-block;
   position:relative;
   color:rgb(128, 47, 0);
-  padding:0 5px;
+  margin:0 5px;
 }
 
 .header-nav a:after {    
   background: none repeat scroll 0 0 transparent;
-  bottom: 0;
+  bottom: -2px;
   content: "";
   display: block;
   height: 2px;
@@ -28,4 +29,7 @@
 .header-nav a:hover:after { 
   width: 100%; 
   left: 0; 
+}
+.header-right{
+  font-weight:600;
 }
