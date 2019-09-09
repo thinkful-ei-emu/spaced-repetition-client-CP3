@@ -1,0 +1,28 @@
+.DashboardSection{
+  margin:auto;
+  width:80%;
+  min-width:300px;
+  max-width:800px;
+  height:200px;
+  padding:1px 15px;
+  /* background-image: linear-gradient(
+    rgba(208, 170, 58, 0.65),
+    rgba(174, 167, 100, 0.65)
+  ); */
+  background-image: linear-gradient(
+    rgba(174, 167, 100),
+    rgba(208, 170, 58)
+  );
+}
+
+.DashboardSection .header-undertext{
+  font-size:70%;
+  display:block;
+  font-weight:600;
+}
+
+.dashboard-words-div{
+  display:flex;
+  flex-direction:column;
+  padding:10px;
+}
