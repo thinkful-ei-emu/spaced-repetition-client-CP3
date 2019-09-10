@@ -57,7 +57,7 @@ export class UserProvider extends Component {
   }
 
   setUser = user => {
-    this.setState({ user })
+    return (async ()=> new Promise(resolve => this.setState({user},resolve)))();
   }
 
   processLogin = authToken => {
@@ -78,7 +78,7 @@ export class UserProvider extends Component {
     TokenService.clearAuthToken()
     TokenService.clearCallbackBeforeExpiry()
     IdleService.unRegisterIdleResets()
-    this.setUser({})
+    return this.setUser({});
   }
 
   logoutBecauseIdle = () => {

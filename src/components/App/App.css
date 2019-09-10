@@ -1,3 +1,12 @@
 /* main{
   padding:1px;
 } */
+
+.App{
+  display:flex;
+  flex-direction:column;
+}
+main{
+  flex:1;
+  position:relative;
+}

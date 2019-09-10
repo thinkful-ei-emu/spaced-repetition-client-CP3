@@ -7,7 +7,13 @@ class DashboardRoute extends Component {
   static contextType = SRContext
 
   componentDidMount(){
-    this.context.loadLangWords();
+    this.context.loadLangWords()
+      .then(res=>{
+        if(res!=='success'){
+          console.log('hi');
+          this.props.history.push('/login')
+        }
+      })
   }
 
   render() {
@@ -24,14 +30,29 @@ class DashboardRoute extends Component {
         <div className='dashboard-words-div'>
           {
             this.context.words.map((word,index)=>{
-              return(<div>
+              return(
+                <div key={index} className='word-row-div'>
+                  <div className='word-row-original'>
+                    {word.original}
+                  </div>
+                  <div className='word-row-translation'>
+                    {word.translation}
+                  </div>
+                  <div className='word-row-correct'>
+                    <span className='green'>
+                      {word.correct_count}
+                    </span>,
+                    <span className='red'>
+                      {word.incorrect_count}
+                    </span>
+                  </div>
                 
-              </div>)
+                </div>
+              )
             })
 
           }
         </div>
-
 
       </section>
     );

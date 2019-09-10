@@ -1,0 +1,18 @@
+.learnWordSection{
+  margin:0 auto;
+  margin-top: 7vh;
+  width:80%;
+  min-width:300px;
+  max-width:800px;
+  padding:1px 15px;
+  padding-bottom:100px;
+  /* background-image: linear-gradient(
+    rgba(208, 170, 58, 0.65),
+    rgba(174, 167, 100, 0.65)
+  ); */
+  background-image: linear-gradient(
+    rgba(174, 167, 100),
+    rgba(208, 170, 58)
+  );
+  text-align:center;
+}
