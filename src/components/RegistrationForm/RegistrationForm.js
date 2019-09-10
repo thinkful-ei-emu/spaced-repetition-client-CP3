@@ -91,7 +91,7 @@ class RegistrationForm extends Component {
           </Button>
           {' '}
           <div className='SignupLineBreakDiv'></div>
-          <Link to='/login'>Already have an account?</Link>
+          <Link className='registration-have-acc' to='/login'>Already have an account?</Link>
         </footer>
       </form>
     )

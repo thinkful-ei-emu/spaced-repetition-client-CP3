@@ -2,8 +2,9 @@
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background-color:#AEA764;
   background-color:#D0AA3A;
+  background-color:#AEA764;
+  background-color:rgb(250, 244, 195);
   padding:0 1em;
 }
 
@@ -11,7 +12,7 @@
   text-decoration: none;
   display:inline-block;
   position:relative;
-  color:rgb(128, 47, 0);
+  color:#4A2D0F;
   margin:0 5px;
 }
 

@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "name": "spaced-repetition",
-  "alias": "spaced-repetition",
+  "name": "spaced-repetition-cr",
+  "alias": "spaced-repetition-cr",
   "routes": [
     {
       "src": "^/static/(.*)",
@@ -22,7 +22,7 @@
     {
       "src": ".*",
       "dest": "/index.html"
-    },
+    }
   ]
  }
  
