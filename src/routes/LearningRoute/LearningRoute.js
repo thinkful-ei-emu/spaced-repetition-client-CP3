@@ -31,8 +31,12 @@ class LearningRoute extends Component {
     LanguageApiService.postGuess(this.state.guess)
       .then(res => {
         this.setState({
-          isInQuestion: false,
-          currentQ: res,
+          isInQuestion: false, /* 
+          currentQ: {
+            ...this.state.currentQ,
+            wordCorrectCount:,
+            wordIncorrectCount:
+          }, */
           answer: res.answer,
           nextQ: { ...res }
         })
@@ -41,7 +45,12 @@ class LearningRoute extends Component {
   }
 
   moveToNextWord=()=>{
-
+    this.setState({
+      currentQ:{...this.state.nextQ},
+      guess:'',
+      answer:'',
+      isInQuestion:true,
+    })
   }
 
   componentDidMount() {
