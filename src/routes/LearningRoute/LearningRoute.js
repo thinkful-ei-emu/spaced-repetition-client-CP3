@@ -95,16 +95,16 @@ class LearningRoute extends Component {
           </>
           :
           (
-            (this.state.answer === this.state.guess) ?
+            (this.state.nextQ.isCorrect) ?
               <>
                 <h2>You were correct! :D</h2>
                 <div className='DisplayFeedback'>
-                <p>{`The correct translation for ${this.state.currentQ.nextWord} was ${this.state.answer} and you chose ${this.state.guess}`}</p>
+                <p>{`The correct translation for ${this.state.currentQ.nextWord} was ${this.state.answer} and you chose ${this.state.guess}!`}</p>
                 </div>
                 <button onClick={e => {
                   this.moveToNextWord();
                 }}>
-                  Try another word
+                  Try another word!
                 </button>
                 <div className='DisplayScore'>
                   <p >Your total score is: {this.state.nextQ.totalScore}</p>
@@ -114,12 +114,12 @@ class LearningRoute extends Component {
               <>
                 <h2>Good try, but not quite right :(</h2>
                 <div className='DisplayFeedback'>
-                <p>{`The correct translation for ${this.state.currentQ.nextWord} was ${this.state.answer} and you chose ${this.state.guess}`}</p>
+                <p>{`The correct translation for ${this.state.currentQ.nextWord} was ${this.state.answer} and you chose ${this.state.guess}!`}</p>
                 </div>
                 <button onClick={e => {
                   this.moveToNextWord();
                 }}>
-                  Try another word
+                  Try another word!
                 </button>
                 <div className='DisplayScore'>
 
