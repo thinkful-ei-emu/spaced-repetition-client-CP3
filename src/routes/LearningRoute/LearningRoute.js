@@ -75,19 +75,21 @@ class LearningRoute extends Component {
                   this.state.currentQ.nextWord
                 }
               </h3>
-              <label htmlFor='learn-guess-input'>What's the translation for this word? </label>
-              <br></br>
-              <input id='learn-guess-input' value={this.state.guess} onChange={e => { this.handleGuess(e.target.value) }} />
-              <br></br>
-              <p>
-              You have answered this word correctly <span className='green'> {this.state.currentQ.wordCorrectCount}  </span> times.
-              </p>
-              <p>
-              You have answered this word incorrectly <span className='red'>{this.state.currentQ.wordIncorrectCount} </span> times.
-              </p>
-              <button className='learn-submit-guess-button' onClick={e => {
+
+              <form onSubmit={e => {
+                e.preventDefault();
                 this.submitGuess();
-              }}>Submit your answer</button>
+              }}>
+                <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
+                <br></br>
+                <input id='learn-guess-input' type='text' value={this.state.guess} onChange={e => { this.handleGuess(e.target.value) }} required />
+                <br></br>
+                <button type='submit' className='learn-submit-guess-button' >Submit your answer</button>
+              </form>
+              
+              <p>Your total score is: {this.state.currentQ.totalScore}</p>
+              <p>You have answered this word correctly <span className='green'> {this.state.currentQ.wordCorrectCount}  </span> times.</p>
+              <p>You have answered this word incorrectly <span className='red'>{this.state.currentQ.wordIncorrectCount} </span> times.</p>
               </>
             }
           </>
