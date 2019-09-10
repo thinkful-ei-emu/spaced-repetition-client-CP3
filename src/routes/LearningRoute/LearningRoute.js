@@ -24,11 +24,13 @@ class LearningRoute extends Component {
   }
 
   handleGuess = (guess) => {
+    
     this.setState({ guess })
   }
 
   submitGuess = () => {
-    LanguageApiService.postGuess(this.state.guess)
+    if(this.state.guess!==''){
+      LanguageApiService.postGuess(this.state.guess)
       .then(res => {
         this.setState({
           isInQuestion: false, /* 
@@ -42,6 +44,8 @@ class LearningRoute extends Component {
         })
       })
       .catch(e => this.setState({ error: e, guess: '', answer: '' }))
+    }
+    
   }
 
   moveToNextWord=()=>{
@@ -63,18 +67,29 @@ class LearningRoute extends Component {
         {this.state.isInQuestion ?
 
           <>
-            <h2>Translate the word:</h2>
-            <h3>
-              {this.state.currentQ.nextWord &&
-                this.state.currentQ.nextWord
-              }
-            </h3>
-            <label htmlFor='learn-guess-input'>Guess: </label>
-            <input id='learn-guess-input' value={this.state.guess} onChange={e => { this.handleGuess(e.target.value) }} />
-            <br></br>
-            <button className='learn-submit-guess-button' onClick={e => {
-              this.submitGuess();
-            }}>Submit</button>
+            {this.state.currentQ.nextWord &&
+            <>
+              <h2>Translate the word:</h2>
+              <h3>
+                {
+                  this.state.currentQ.nextWord
+                }
+              </h3>
+              <label htmlFor='learn-guess-input'>What's the translation for this word? </label>
+              <br></br>
+              <input id='learn-guess-input' value={this.state.guess} onChange={e => { this.handleGuess(e.target.value) }} />
+              <br></br>
+              <p>
+              You have answered this word correctly <span className='green'> {this.state.currentQ.wordCorrectCount}  </span> times.
+              </p>
+              <p>
+              You have answered this word incorrectly <span className='red'>{this.state.currentQ.wordIncorrectCount} </span> times.
+              </p>
+              <button className='learn-submit-guess-button' onClick={e => {
+                this.submitGuess();
+              }}>Submit your answer</button>
+              </>
+            }
           </>
           :
           (
