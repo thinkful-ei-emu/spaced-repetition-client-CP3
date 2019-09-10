@@ -28,6 +28,10 @@
   padding:5px;
 }
 
+.current-score{
+  font-size: 14px;
+}
+
 .word-row-div{
   display:flex;
 }

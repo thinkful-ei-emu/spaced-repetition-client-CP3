@@ -22,16 +22,17 @@ class DashboardRoute extends Component {
         <h2>
           <span>Dashboard</span>
           <span className="header-undertext">Language: {' '+this.context.language.name}</span>
+          <span className='current-score'>Total correct answers: {this.context.language.total_score}</span>
         </h2>
         <Link to='/learn'>
           Start Practicing
         </Link>
         <h3>Words to practice</h3>
-        <div className='dashboard-words-div'>
+        <ul className='dashboard-words-div'>
           {
             this.context.words.map((word,index)=>{
               return(
-                <div key={index} className='word-row-div'>
+                <li key={index} className='word-row-div'>
                   <div className='word-row-original'>
                     {word.original}
                   </div>
@@ -47,12 +48,12 @@ class DashboardRoute extends Component {
                     </span>
                   </div>
                 
-                </div>
+                </li>
               )
             })
 
           }
-        </div>
+        </ul>
 
       </section>
     );
