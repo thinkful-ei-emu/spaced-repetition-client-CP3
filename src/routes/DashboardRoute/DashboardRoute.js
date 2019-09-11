@@ -59,14 +59,18 @@ class DashboardRoute extends Component {
         <h2>Add Word</h2>
         <p>For: {this.state.lang.name}</p>
         <form onSubmit={this.handleSubmit} >
-          <label htmlFor='original'>Original: </label>
-          <input type='text' name='original' id='original'
-            value={this.state.original} required
-            onChange={e => this.setState({ original: e.target.value })} />
-          <label htmlFor='translation'>Translation: </label>
-          <input type='text' name='translation' id='translation'
-            value={this.state.translation} required
-            onChange={e => this.setState({ translation: e.target.value })} />
+          <div className='addInput'>
+            <label htmlFor='original'>Original: </label>
+            <input type='text' name='original' id='original'
+              value={this.state.original} required
+              onChange={e => this.setState({ original: e.target.value })} />
+          </div>
+          <div className='addInput'>
+            <label htmlFor='translation'>Translation: </label>
+            <input type='text' name='translation' id='translation'
+              value={this.state.translation} required
+              onChange={e => this.setState({ translation: e.target.value })} />
+          </div>
           <div className='AddWord__buttons'>
             <button className='addbtn' type='submit'>
             Add

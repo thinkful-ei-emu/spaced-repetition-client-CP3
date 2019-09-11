@@ -53,9 +53,19 @@
 .AddWord_content{
   background-color: rgb(250, 244, 195);
   margin: auto;
-  padding: 20px;
+  padding: 0 20px 20px 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 300px;
+}
+
+.addInput {
+  margin-bottom: 10px;
+}
+
+.AddWord__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .current-score{
