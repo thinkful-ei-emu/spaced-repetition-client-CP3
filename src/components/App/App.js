@@ -23,9 +23,11 @@ export default class App extends Component {
           if(langWords==='unauthorized'){
             return this.context.processLogout();
           }
-
+          console.log(langWords.allWords);
           this.setState({
             language:langWords.language,
+            languages:langWords.languages,
+            allWords:langWords.allWords,
             words: langWords.words
           })
           return 'success';

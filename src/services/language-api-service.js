@@ -36,7 +36,7 @@ const LanguageApiService = {
           : res.json()
       )
   },
-  postGuess(guess) {
+  postGuess(guess,language) {
     return fetch(`${config.API_ENDPOINT}/language/guess`, {
       method: 'POST',
       headers: {
@@ -44,7 +44,8 @@ const LanguageApiService = {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
-        guess
+        guess,
+        language
       })
         
         
