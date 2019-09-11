@@ -6,7 +6,8 @@
   min-width:300px;
   max-width:800px;
   padding:1px 15px;
-  padding-bottom:100px;
+  padding-bottom:50px;
+  margin-bottom:7vh;
   /* background-image: linear-gradient(
     rgba(208, 170, 58, 0.65),
     rgba(174, 167, 100, 0.65)
@@ -80,12 +81,14 @@
   flex-basis:40%;
   word-break: break-all; 
   word-wrap: break-word;
+  padding-right:5px;
 }
 .word-row-translation{
   
   flex-basis:40%;
   word-break: break-all; 
   word-wrap: break-word;
+  padding-right:5px;
 }
 .word-row-correct{
   
@@ -121,5 +124,15 @@
 }
 
 .Lang-words-div h3{
-  margin-top:5px;
+  margin-top:15px;
+  word-break: break-all; 
+  word-wrap: break-word;
+}
+.add-new-lang-input-form{
+  margin-top:10px;
+}
+#add-new-lang-input{
+  padding:5px;
+  margin-bottom:10px;
+  width:100%;
 }

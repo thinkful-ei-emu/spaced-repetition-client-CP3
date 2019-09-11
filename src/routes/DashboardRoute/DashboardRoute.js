@@ -22,7 +22,8 @@ class DashboardRoute extends Component {
 
   handleAddNew= (e)=>{
     if(this.state.isAdding){
-      LanguageApiService.addLanguage(this.state.newName)
+      if(this.state.newName!==''){
+        LanguageApiService.addLanguage(this.state.newName)
         .then(res=>{
           return this.context.loadLangWords();
         })
@@ -32,8 +33,12 @@ class DashboardRoute extends Component {
           }
         })
         .then(()=>{
-          this.setState({isAdding:false})
+          this.setState({isAdding:false,newName:''})
         })
+      }
+      else{
+        this.setState({isAdding:false});
+      }
     }
     else{
       this.setState({isAdding:true})
@@ -162,8 +167,8 @@ class DashboardRoute extends Component {
         <h2>
           <span>Dashboard</span>
           {this.state.isAdding &&
-            <form>
-              <label htmlFor='add-new-lang-input'>
+            <form className='add-new-lang-input-form'>
+              <label htmlFor='add-new-lang-input'  className='header-undertext add-new-lang-input-label'>
                 Name:
               </label>
               <input type='text' id='add-new-lang-input' value={this.state.newName} onChange={e=>this.setState({newName:e.target.value})}/>
