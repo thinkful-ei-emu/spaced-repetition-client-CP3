@@ -40,10 +40,6 @@ class DashboardRoute extends Component {
     }
   }
 
-  handleDelete=(e)=>{
-    
-  }
-
   componentDidMount() {
     this.context.loadLangWords()
       .then(res => {
@@ -76,7 +72,7 @@ class DashboardRoute extends Component {
             Add
             </button>
             {' '}
-            <button className='cancelbtn' type='button' onClick={() => this.setState({ addWord: false })}>
+            <button className='cancelbtn' type='button' onClick={() => this.handleCancelClick()}>
             Cancel
             </button>
           </div>
@@ -113,6 +109,17 @@ class DashboardRoute extends Component {
      })
   }
 
+  handleCancelClick = () => {
+    this.setState({ 
+      addWord: false,
+      original: '',
+      translation: '',
+      lang: {
+        id: undefined,
+        name: ''
+      }
+     })
+  }
   handleClickAdd = (id, name) => {
     this.setState({ 
       addWord: true,
