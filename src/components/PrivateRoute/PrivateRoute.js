@@ -11,7 +11,7 @@ export default function PrivateRoute({ component, ...props }) {
         <UserContext.Consumer>
           {userContext =>
             !!userContext.user.id
-              ? <Component {...componentProps} />
+              ? <Component {...componentProps}  langId={componentProps.match.params.langid}/>
               : (
                 <Redirect
                   to={{

@@ -5,6 +5,8 @@ let SRContext = React.createContext({
         updateLangWords:()=>{},
         submitAnswer: () =>{}, 
         language: {},
+        languages: [],
+        allWords: {},
         words: []
     })
 export default SRContext;
