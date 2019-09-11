@@ -2,22 +2,40 @@ import React, { Component } from 'react';
 import './DashboardRoute.css';
 import { Link } from 'react-router-dom';
 import SRContext from '../../contexts/SRContext';
+import LanguageApiService from '../../services/language-api-service';
 
 class DashboardRoute extends Component {
   static contextType = SRContext
   state={
     toggleRefresh:true,
-    isAdding:false
+    isAdding:false,
+    newName:''
   }
 
   handleAddNew= (e)=>{
     if(this.state.isAdding){
-
+      LanguageApiService.addLanguage(this.state.name)
+        .then(res=>{
+          return this.context.loadLangWords();
+        })
+        .then(res => {
+          if (res !== 'success') {
+            this.props.history.push('/login')
+          }
+        })
+        .then(()=>{
+          this.setState({isAdding:false})
+        })
     }
     else{
       this.setState({isAdding:true})
     }
   }
+
+  handleDelete=(e)=>{
+    
+  }
+
   componentDidMount() {
     this.context.loadLangWords()
       .then(res => {
@@ -35,6 +53,15 @@ class DashboardRoute extends Component {
       <section className='DashboardSection'>
         <h2>
           <span>Dashboard</span>
+          {this.state.isAdding &&
+            <form>
+              <label htmlFor='add-new-lang-input'>
+                Name:
+              </label>
+              <input type='text' id='add-new-lang-input' value={this.state.newName} onChange={e=>this.setState({newName:e.target.value})}/>
+            </form>
+
+          }
           <button onClick={this.handleAddNew}className='header-undertext'>Add new Set</button>
         </h2>
         {this.context.languages &&
@@ -46,7 +73,7 @@ class DashboardRoute extends Component {
                   <br></br>
                   <span className='current-score'>Total correct answers: {language.total_score}</span>
                 </h3>
-                <Link to='/learn'>
+                <Link to={`/learn/${language.id}`}>
                   Start Practicing
                 </Link>
                 <h3>Words to practice</h3>
