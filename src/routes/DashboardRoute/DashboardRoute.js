@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import './DashboardRoute.css';
 import { Link } from 'react-router-dom';
 import SRContext from '../../contexts/SRContext';
-<<<<<<< HEAD
 import WordApiService from '../../services/word-api-service';
-=======
 import LanguageApiService from '../../services/language-api-service';
->>>>>>> adjust
 
 class DashboardRoute extends Component {
   static contextType = SRContext
