@@ -100,8 +100,15 @@
   border:1px solid black;
   padding:5px;
   margin-bottom:20px;
+  position:relative;
 }
-
+.DELETE-language{
+  position:absolute;
+  top:0;
+  right:0;
+  color:red;
+  font-weight:600;
+}
 
 .Lang-words-div h3{
   margin-top:5px;
