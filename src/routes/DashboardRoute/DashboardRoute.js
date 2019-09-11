@@ -106,7 +106,7 @@ class DashboardRoute extends Component {
         id: undefined,
         name: ''
       }
-     })
+    })
   }
 
   handleCancelClick = () => {
@@ -141,7 +141,17 @@ class DashboardRoute extends Component {
           })
       })
   }
-
+  handleLanguageDelete=(id)=>{
+    LanguageApiService.deleteLanguage(id)
+      .then(res => {
+        this.context.loadLangWords()
+          .then(res => {
+            if (res !== 'success') {
+              this.props.history.push('/login')
+            }
+          })
+      })
+  }
   render() {
     return (
       <section className='DashboardSection'>
@@ -168,6 +178,7 @@ class DashboardRoute extends Component {
                   <br></br>
                   <span className='current-score'>Total correct answers: {language.total_score}</span>
                 </h3>
+                <button onClick={e=>this.handleLanguageDelete(language.id)}className='DELETE-language'>DELETE</button>
                 <Link to={`/learn/${language.id}`}>
                   Start Practicing
                 </Link>

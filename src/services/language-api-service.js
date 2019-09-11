@@ -2,6 +2,14 @@ import config from '../config'
 import TokenService from './token-service'
 
 const LanguageApiService = {
+  deleteLanguage(id){
+    return fetch(`${config.API_ENDPOINT}/language/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      }
+    })
+  },
   addLanguage(name) {
     return fetch(`${config.API_ENDPOINT}/language`, {
       method: 'POST',
