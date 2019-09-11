@@ -22,7 +22,7 @@ class DashboardRoute extends Component {
 
   handleAddNew= (e)=>{
     if(this.state.isAdding){
-      LanguageApiService.addLanguage(this.state.name)
+      LanguageApiService.addLanguage(this.state.newName)
         .then(res=>{
           return this.context.loadLangWords();
         })
