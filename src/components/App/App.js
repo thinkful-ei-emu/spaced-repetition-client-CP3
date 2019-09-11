@@ -63,7 +63,7 @@ export default class App extends Component {
                 component={DashboardRoute}
               />
               <PrivateRoute
-                path={'/learn'}
+                path={'/learn/:langid'}
                 component={LearningRoute}
               />
               <PublicOnlyRoute
