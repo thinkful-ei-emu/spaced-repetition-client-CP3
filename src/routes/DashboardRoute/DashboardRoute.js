@@ -40,6 +40,7 @@ class DashboardRoute extends Component {
                   Start Practicing
                 </Link>
                 <h3>Words to practice</h3>
+                <button>Add Word</button>
                 <ul className='dashboard-words-div'>
                   {
                     this.context.allWords[language.id].map((word, index) => {
@@ -59,7 +60,9 @@ class DashboardRoute extends Component {
                               {word.incorrect_count}
                             </span>
                           </div>
-
+                          <div>
+                            <img className='deleteButton' src='https://image.flaticon.com/icons/png/512/60/60578.png' alt='delete button' />
+                          </div>
                         </li>
                       )
                     })
