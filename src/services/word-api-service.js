@@ -3,6 +3,9 @@ import TokenService from './token-service'
 
 const WordApiService = {
   postWord(word) {
+    console.log(JSON.stringify({
+      word
+    }));
     return fetch(`${config.API_ENDPOINT}/word`, {
       method: 'POST',
       headers: {
