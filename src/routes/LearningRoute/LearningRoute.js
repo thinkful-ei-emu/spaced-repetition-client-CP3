@@ -14,7 +14,7 @@ class LearningRoute extends Component {
     error: ''
   }
   getNewHead = () => {
-    return LanguageApiService.getHead()
+    return LanguageApiService.getHead(this.props.langId)
       .then(res => {
         this.setState({
           currentQ: res,
@@ -30,7 +30,7 @@ class LearningRoute extends Component {
 
   submitGuess = () => {
     if (this.state.guess !== '') {
-      LanguageApiService.postGuess(this.state.guess)
+      LanguageApiService.postGuess(this.state.guess,this.props.langId)
         .then(res => {
           this.setState({
             isInQuestion: false, /* 
