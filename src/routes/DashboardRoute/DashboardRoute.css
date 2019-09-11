@@ -66,3 +66,13 @@
   color:rgb(184, 0, 0);
   font-weight:600;
 }
+
+.Lang-words-div{
+  border:1px solid black;
+  padding:5px;
+}
+
+
+.Lang-words-div h3{
+  margin-top:5px;
+}

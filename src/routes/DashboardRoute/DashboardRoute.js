@@ -6,7 +6,17 @@ import SRContext from '../../contexts/SRContext';
 class DashboardRoute extends Component {
   static contextType = SRContext
   state={
-    toggleRefresh:true
+    toggleRefresh:true,
+    isAdding:false
+  }
+
+  handleAddNew= (e)=>{
+    if(this.state.isAdding){
+
+    }
+    else{
+      this.setState({isAdding:true})
+    }
   }
   componentDidMount() {
     this.context.loadLangWords()
@@ -25,12 +35,12 @@ class DashboardRoute extends Component {
       <section className='DashboardSection'>
         <h2>
           <span>Dashboard</span>
-
+          <button onClick={this.handleAddNew}className='header-undertext'>Add new Set</button>
         </h2>
         {this.context.languages &&
           this.context.languages.map((language,index) => {
             return (
-              <div key={index}>
+              <div className='Lang-words-div' key={index}>
                 <h3>
                   Language: {' ' + language.name}
                   <br></br>
