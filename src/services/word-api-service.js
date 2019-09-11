@@ -27,7 +27,7 @@ const WordApiService = {
       )
   },
   deleteWord(id) {
-    return fetch(`${config.API_ENDPOINT}/ratings/${id}`,{
+    return fetch(`${config.API_ENDPOINT}/word/${id}`,{
         method: 'DELETE',
         headers: {
             'authorization': `bearer ${TokenService.getAuthToken()}`
