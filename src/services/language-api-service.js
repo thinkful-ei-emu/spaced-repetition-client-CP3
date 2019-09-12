@@ -61,6 +61,9 @@ const LanguageApiService = {
       .then(res =>
         (!res.ok)
           ? res.json().then(e => {
+            if(e.error==='The head is null'){
+              return 'head is null'
+            }
             if (e.error==="Unauthorized request"){
               TokenService.clearAuthToken();
               return 'unauthorized'

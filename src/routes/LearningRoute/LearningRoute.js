@@ -15,16 +15,26 @@ class LearningRoute extends Component {
   getNewHead = () => {
     return LanguageApiService.getHead(this.props.langId)
       .then(res => {
-        this.setState({
-          currentQ: res,
-          isInQuestion: true
-        })
+        if(res==='head is null'){
+          this.setState({
+            error:'Error: The first word could not be found'
+          })
+        }
+        else{
+          this.setState({
+            currentQ: res,
+            isInQuestion: true,
+            error:''
+          })
+        }
+        
       })
   }
 
   handleGuess = (guess) => {
 
-    this.setState({ guess })
+    this.setState({ guess,
+      error:'' })
   }
 
   submitGuess = () => {
@@ -39,10 +49,11 @@ class LearningRoute extends Component {
             wordIncorrectCount:
           }, */
             answer: res.answer,
-            nextQ: { ...res }
+            nextQ: { ...res },
+            error:''
           })
         })
-        .catch(e => this.setState({ error: e, guess: '', answer: '' }))
+        .catch(e => this.setState({ error: e.error, guess: '', answer: '' }))
     }
 
   }
@@ -53,6 +64,7 @@ class LearningRoute extends Component {
       guess: '',
       answer: '',
       isInQuestion: true,
+      error:''
     })
   }
 
@@ -63,6 +75,12 @@ class LearningRoute extends Component {
   render() {
     return (
       <section className='learnWordSection'>
+        {
+          this.state.error &&
+          <div className='learn-error'>
+            {this.state.error}
+          </div>
+        }
         {this.state.isInQuestion ?
 
           <>

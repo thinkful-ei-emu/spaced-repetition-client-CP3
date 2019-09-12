@@ -17,7 +17,10 @@
   background-color:rgb(250, 244, 195);
   text-align:center;
 }
-
+.learn-error{
+  color:rgb(136, 0, 0);
+  font-weight:600;
+}
 #learn-guess-input{
   padding:5px;
 }
