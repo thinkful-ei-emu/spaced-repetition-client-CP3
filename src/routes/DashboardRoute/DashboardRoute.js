@@ -77,11 +77,11 @@ class DashboardRoute extends Component {
               onChange={e => this.setState({ translation: e.target.value })} />
           </div>
           <div className='AddWord__buttons'>
-            <button className='addbtn' type='submit'>
+            <button className='button' type='submit'>
             Add
             </button>
             {' '}
-            <button className='cancelbtn' type='button' onClick={() => this.handleCancelClick()}>
+            <button className='button button1' type='button' onClick={() => this.handleCancelClick()}>
             Cancel
             </button>
           </div>
@@ -175,7 +175,7 @@ class DashboardRoute extends Component {
             </form>
 
           }
-          <button onClick={this.handleAddNew}className='header-undertext'>Add new Set</button>
+          <button onClick={this.handleAddNew}className='header-undertext button'>Add New Set</button>
         </h2>
         {this.state.addWord && this.renderAddWord()}
         {this.context.languages &&
@@ -189,10 +189,12 @@ class DashboardRoute extends Component {
                 </h3>
                 <button onClick={e=>this.handleLanguageDelete(language.id)}className='DELETE-language'>DELETE</button>
                 <Link to={`/learn/${language.id}`}>
-                  Start Practicing
+                  <button className='startPrac'>
+                  <span>Start Practicing </span>
+                  </button>
                 </Link>
                 <h3>Words to practice</h3>
-                <button onClick={() => this.handleClickAdd(language.id, language.name)}>Add Word</button>
+                <button className='button' onClick={() => this.handleClickAdd(language.id, language.name)}>Add Word</button>
                 <ul className='dashboard-words-div'>
                   {
                     this.context.allWords[language.id].map((word, index) => {

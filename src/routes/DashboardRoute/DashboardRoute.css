@@ -114,7 +114,12 @@
   padding:5px;
   margin-bottom:20px;
   position:relative;
+  background-color: #FFF07A;
 }
+.Lang-words-div:nth-child(even) {
+  background-color: #CCC79F;
+}
+
 .DELETE-language{
   position:absolute;
   top:0;
@@ -135,4 +140,65 @@
   padding:5px;
   margin-bottom:10px;
   width:100%;
+}
+
+.startPrac {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: green;
+  border: none;
+  color: rgb(250, 244, 195);
+  text-align: center;
+  font-size: 18px;
+  padding: 5px;
+  width: 160px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.startPrac span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.startPrac span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.startPrac:hover span {
+  padding-right: 25px;
+}
+
+.startPrac:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.button {
+  background-color: rgb(250, 244, 195); 
+  color: black; 
+  border: 2px solid green;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  border: 2px solid red;
+}
+
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
