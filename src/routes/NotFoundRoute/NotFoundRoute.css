@@ -1,0 +1,21 @@
+.page-not-found-section{
+  margin:0 auto;
+  margin-top: 7vh;
+  width:80%;
+  height:100%;
+  min-width:300px;
+  max-width:800px;
+  padding:1px 15px;
+  padding-bottom:50px;
+  margin-bottom:7vh;
+  /* background-image: linear-gradient(
+    rgba(208, 170, 58, 0.65),
+    rgba(174, 167, 100, 0.65)
+  ); */
+  /* background-image: linear-gradient(
+    rgba(174, 167, 100),
+    rgba(208, 170, 58)
+  ); */
+  background-color: rgb(250, 244, 195);
+  color:rgb(184, 0, 0);
+}

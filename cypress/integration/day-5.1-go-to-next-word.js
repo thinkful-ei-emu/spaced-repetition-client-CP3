@@ -13,20 +13,20 @@ describe(`User story: Go to next word`, function() {
     cy.server()
       .route({
         method: 'GET',
-        url: `/api/language/head`,
+        url: `/api/language/head/1`,
         status: 200,
         response: 'fixture:language-head.json',
       })
       .as('languageHeadRequest')
       .route({
         method: 'POST',
-        url: `/api/language/guess`,
+        url: `/api/language/guess/1`,
         status: 200,
         response: 'fixture:language-guess-generic.json',
       })
       .as('postListGuess')
 
-    cy.login().visit(`/learn`).wait('@languageHeadRequest')
+    cy.login().visit(`/learn/1`).wait('@languageHeadRequest')
     cy.get('input#learn-guess-input').type('anything')
     cy.get('form').submit().wait('@postListGuess')
   })

@@ -31,7 +31,7 @@ describe(`User story: User's dashboard`, function() {
   it('has h2 with title, total score, subtitle and link', () => {
     cy.fixture('language.json').then(({ language }) => {
       cy.get('main section').within($section => {
-        cy.get('h2')
+        cy.get('h3')
           .should('contain', language.name)
 
         cy.root()
@@ -41,11 +41,11 @@ describe(`User story: User's dashboard`, function() {
           )
 
         cy.get('a')
-          .should('have.attr', 'href', '/learn')
-          .and('have.text', 'Start Practicing')
+          .should('have.attr', 'href', '/learn/1')
+          .and('contain', 'Start Practicing')
 
         cy.get('h3')
-          .should('have.text', 'Words to practice')
+          .should('contain', 'Words to practice')
       })
     })
   })

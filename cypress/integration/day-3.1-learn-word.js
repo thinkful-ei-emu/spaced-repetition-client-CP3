@@ -16,7 +16,7 @@ describe(`User story: Presented with word`, function() {
     cy.server()
       .route({
         method: 'GET',
-        url: `/api/language/head`,
+        url: `/api/language/head/1`,
         status: 200,
         response: 'fixture:language-head.json',
       })
@@ -25,7 +25,7 @@ describe(`User story: Presented with word`, function() {
 
   it('displays the current score and h2 with next word', () => {
     cy.login()
-      .visit(`/learn`)
+      .visit(`/learn/1`)
       .wait('@languageHeadRequest')
 
     cy.fixture('language-head.json')
@@ -47,7 +47,7 @@ describe(`User story: Presented with word`, function() {
 
   it(`displays a form for submitting the next guess`, () => {
     cy.login()
-      .visit(`/learn`)
+      .visit(`/learn/1`)
       .wait('@languageHeadRequest')
 
     cy.get('main form').within($form => {
@@ -65,7 +65,7 @@ describe(`User story: Presented with word`, function() {
 
   it(`displays the correct and incorrect count for this word`, () => {
     cy.login()
-      .visit(`/learn`)
+      .visit(`/learn/1`)
       .wait('@languageHeadRequest')
 
     cy.fixture('language-head.json').then(languageHeadFixture => {

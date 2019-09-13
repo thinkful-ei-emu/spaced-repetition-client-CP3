@@ -18,7 +18,7 @@ describe(`User story: Answer feedback`, function() {
     cy.server()
       .route({
         method: 'GET',
-        url: `/api/language/head`,
+        url: `/api/language/head/1`,
         status: 200,
         response: 'fixture:language-head.json',
       })
@@ -29,7 +29,7 @@ describe(`User story: Answer feedback`, function() {
     beforeEach(() => {
       cy.route({
         method: 'POST',
-        url: `/api/language/guess`,
+        url: `/api/language/guess/1`,
         status: 200,
         response: 'fixture:language-guess-generic.json',
       })
@@ -39,7 +39,7 @@ describe(`User story: Answer feedback`, function() {
     it(`submits my answer typed in the form`, () => {
       const guess = 'my-test-guess'
 
-      cy.login().visit(`/learn`)
+      cy.login().visit(`/learn/1`)
       cy.wait('@languageHeadRequest')
 
       cy.get('main form').within($form => {
@@ -62,13 +62,13 @@ describe(`User story: Answer feedback`, function() {
     beforeEach(() => {
       cy.route({
         method: 'POST',
-        url: `/api/language/guess`,
+        url: `/api/language/guess/1`,
         status: 200,
         response: 'fixture:language-guess-incorrect.json',
       })
         .as('postListGuessIncorrect')
 
-      cy.login().visit(`/learn`).wait('@languageHeadRequest')
+      cy.login().visit(`/learn/1`).wait('@languageHeadRequest')
       cy.get('input#learn-guess-input').type(guess)
       cy.get('form').submit().wait('@postListGuessIncorrect')
     })
@@ -116,13 +116,13 @@ describe(`User story: Answer feedback`, function() {
     beforeEach(() => {
       cy.route({
         method: 'POST',
-        url: `/api/language/guess`,
+        url: `/api/language/guess/1`,
         status: 200,
         response: 'fixture:language-guess-correct.json',
       })
         .as('postListGuessCorrect')
 
-      cy.login().visit(`/learn`).wait('@languageHeadRequest')
+      cy.login().visit(`/learn/1`).wait('@languageHeadRequest')
       cy.get('input#learn-guess-input').type(guess)
       cy.get('form').submit().wait('@postListGuessCorrect')
     })
