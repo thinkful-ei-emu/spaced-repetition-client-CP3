@@ -1,5 +1,25 @@
 # Spaced Repetition Capstone
 
+# by Paul and Chris
+
+# About
+Lets the user create spaced repetition flash card sets in order to help them memorize foreign words.
+
+# Live App
+https://spaced-repetition-cr.now.sh/
+
+## Tech Stack
+Front End: React, JavaScript, HTML, CSS
+Back End: NodeJs, Express, PostgreSQL
+Testing: Cypress, Chai, Mocha
+
+## Screenshots:
+Dashboard:
+![ScreenShot]()
+Learning: ![ScreenShot]()
+Login: ![ScreenShot]()
+Register: ![ScreenShot]()
+
 ## Setup
 
 To setup the application
