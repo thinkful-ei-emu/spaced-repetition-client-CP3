@@ -1,5 +1,25 @@
 # Spaced Repetition Capstone
 
+# by Paul and Chris
+
+# About
+Lets the user create spaced repetition flash card sets in order to help them memorize foreign words.
+
+# Live App
+https://spaced-repetition-cr.now.sh/
+
+## Tech Stack
+Front End: React, JavaScript, HTML, CSS
+Back End: NodeJs, Express, PostgreSQL
+Testing: Cypress, Chai, Mocha
+
+## Screenshots:
+Dashboard:
+![ScreenShot](https://github.com/thinkful-ei-emu/spaced-repetition-client-CP3/blob/master/src/images/dashboard.png)
+Learning: ![ScreenShot](https://github.com/thinkful-ei-emu/spaced-repetition-client-CP3/blob/master/src/images/learning.png)
+Login: ![ScreenShot](https://github.com/thinkful-ei-emu/spaced-repetition-client-CP3/blob/master/src/images/login_screen.png)
+Register: ![ScreenShot](https://github.com/thinkful-ei-emu/spaced-repetition-client-CP3/blob/master/src/images/register.png)
+
 ## Setup
 
 To setup the application
