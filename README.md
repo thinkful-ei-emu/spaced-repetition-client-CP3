@@ -15,10 +15,10 @@ Testing: Cypress, Chai, Mocha
 
 ## Screenshots:
 Dashboard:
-![ScreenShot]()
-Learning: ![ScreenShot]()
-Login: ![ScreenShot]()
-Register: ![ScreenShot]()
+![ScreenShot](https://github.com/thinkful-ei-emu/spaced-repetition-client-CP3/blob/master/src/images/dashboard.png)
+Learning: ![ScreenShot](https://github.com/thinkful-ei-emu/spaced-repetition-client-CP3/blob/master/src/images/learning.png)
+Login: ![ScreenShot](https://github.com/thinkful-ei-emu/spaced-repetition-client-CP3/blob/master/src/images/login_screen.png)
+Register: ![ScreenShot](https://github.com/thinkful-ei-emu/spaced-repetition-client-CP3/blob/master/src/images/register.png)
 
 ## Setup
 
