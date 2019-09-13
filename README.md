@@ -5,8 +5,8 @@
 # About
 Lets the user create spaced repetition flash card sets in order to help them memorize foreign words.
 
-# Live App
-https://spaced-repetition-cr.now.sh/
+# Live Server
+https://spaced-repetition-cr.herokuapp.com/
 
 ## Tech Stack
 Front End: React, JavaScript, HTML, CSS
