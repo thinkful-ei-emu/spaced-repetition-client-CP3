@@ -114,7 +114,7 @@ class LearningRoute extends Component {
           (
             (this.state.nextQ.isCorrect) ?
               <>
-                <h2>You were correct! :D</h2>
+                <h2> <span className='green'>&#10003;</span> You were correct! <span className='green'>:D</span></h2>
                 <div className='DisplayFeedback'>
                 <p>{`The correct translation for ${this.state.currentQ.nextWord} was ${this.state.answer} and you chose ${this.state.guess}!`}</p>
                 </div>
@@ -129,7 +129,7 @@ class LearningRoute extends Component {
               </>
               :
               <>
-                <h2>Good try, but not quite right :(</h2>
+                <h2>  <span className='red'>&#10008;</span>Good try, but not quite right <span className='red'>:(</span></h2>
                 <div className='DisplayFeedback'>
                 <p>{`The correct translation for ${this.state.currentQ.nextWord} was ${this.state.answer} and you chose ${this.state.guess}!`}</p>
                 </div>
