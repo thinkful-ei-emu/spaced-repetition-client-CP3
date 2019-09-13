@@ -92,8 +92,8 @@ describe(`User story: Answer feedback`, function() {
             )
           cy.get('h2')
             .should(
-              'have.text',
-              `Good try, but not quite right :(`,
+              'contain',
+              `Good try, but not quite right`,
             )
           cy.get('.DisplayFeedback p')
             .should(
@@ -146,8 +146,8 @@ describe(`User story: Answer feedback`, function() {
             )
           cy.get('h2')
             .should(
-              'have.text',
-              `You were correct! :D`,
+              'contain',
+              `You were correct!`,
             )
           cy.get('.DisplayFeedback p')
             .should(
